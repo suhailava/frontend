@@ -1,6 +1,6 @@
 name: Deploy Node.js to Azure Web App
 on:
-  [push]
+  push
 
 env:
   AZURE_WEBAPP_NAME: manuniv    # set this to your application's name
