@@ -1,6 +1,6 @@
 name: Deploy Node.js to Azure Web App
 on:
-  push
+  [push]
 
 env:
   AZURE_WEBAPP_NAME: manuniv    # set this to your application's name
@@ -11,7 +11,7 @@ jobs:
   build-and-deploy:
     name: Build and Deploy
     runs-on: ubuntu-latest
-    environment: main
+    environment: dev
     steps:
     - uses: actions/checkout@master
     - name: Use Node.js ${{ env.NODE_VERSION }}
