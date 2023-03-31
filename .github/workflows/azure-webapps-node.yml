@@ -1,8 +1,12 @@
 name: Deploy Node.js to Azure Web App
+on:
+  [push]
+
 env:
   AZURE_WEBAPP_NAME: manuniv    # set this to your application's name
   AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
-  NODE_VERSION: '18.x'                
+  NODE_VERSION: '16.x'                
+
 jobs:
   build-and-deploy:
     name: Build and Deploy
@@ -21,7 +25,6 @@ jobs:
         npm prune --production
         npm install js-yaml
         npm run build --if-present
-        # npm run test --if-present
     - name: 'Deploy to Azure WebApp'
       uses: azure/webapps-deploy@v2
       with: 
