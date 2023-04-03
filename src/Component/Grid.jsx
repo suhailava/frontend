@@ -51,7 +51,7 @@ export default function Grid() {
 
         let response = await getCandidateInfo(search, pageNo);
 
-        if (response.data.rowsAffected[0] != 0) {
+        if (response.data.rowsAffected[0] !== 0) {
             setTotalRecords(response.data.recordset[0].records);
         }
 
@@ -133,7 +133,7 @@ export default function Grid() {
                     </thead>
                     <tbody>
                         {/* //PS_PL_14 */}
-                        {gridValues.length == 0 ? <td colSpan="15"><h2 className="alert">No Records Found</h2></td> : gridData()}
+                        {gridValues.length === 0 ? <td colSpan="15"><h2 className="alert">No Records Found</h2></td> : gridData()}
                     </tbody>
 
 
@@ -141,7 +141,7 @@ export default function Grid() {
                 </table>
 
             </div>
-            <div>{gridValues.length == 0 ? <></> :
+            <div>{gridValues.length === 0 ? <></> :
                 <ReactPaginate
                     previousLabel={"<"}
                     nextLabel={">"}
