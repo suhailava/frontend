@@ -48,7 +48,7 @@ export default function Form(){
     useEffect(()=>{  //PS_FPL_3
         populateData();
 
-        if(params.id!=undefined){ //PS_FPL_40
+        if(params.id!==undefined){ //PS_FPL_40
             editDataInfo();
         }
 
@@ -92,7 +92,7 @@ export default function Form(){
             setInputValues({...inputValues,[e.target.name]:facilityInput})
         }
         else{
-            let index=facilityInput.findIndex((facilityId)=>facilityId==e.target.id);
+            let index=facilityInput.findIndex((facilityId)=>facilityId===e.target.id);
             facilityInput.splice(index,1);
             setInputValues({...inputValues,[e.target.name]:facilityInput})
         }
@@ -105,30 +105,30 @@ export default function Form(){
     let validateForm=()=>{
         // debugger
          let result=0;
-         if(inputValues.firstName==""){
+         if(inputValues.firstName===""){
             result++
             setInputValuesError((inputValuesError)=>({...inputValuesError,"firstNameError":"Enter FirstName"}))
          }
          console.log(inputValuesError,'..........error')
-         if(inputValues.lastName==""){
+         if(inputValues.lastName===""){
             result++
             setInputValuesError((inputValuesError)=>({...inputValuesError,"lastNameError":"Enter lastName"}))
          }
          console.log(inputValuesError,'..........error')
-         if(inputValues.dateOfBirth==""){
+         if(inputValues.dateOfBirth===""){
             result++
             setInputValuesError((inputValuesError)=>({...inputValuesError,"dateOfBirthError":"Enter DOB"}))
          }
          console.log(inputValuesError,'..........error')
-         if(inputValues.courseId==""){
+         if(inputValues.courseId===""){
             result++
             setInputValuesError((inputValuesError)=>({...inputValuesError,"courseIdError":"Select any course"}))
          }
-         if(inputValues.admissionModeId==""){
+         if(inputValues.admissionModeId===""){
             result++
             setInputValuesError((inputValuesError)=>({...inputValuesError,"admissionModeIdError":"Select the admissionMode"}))
          }
-         if(inputValues.facId.length==0){
+         if(inputValues.facId.length===0){
             result++
             setInputValuesError((inputValuesError)=>({...inputValuesError,"facIdError":"Select any facilities"}))
          }
@@ -144,7 +144,7 @@ export default function Form(){
     let submitForm= async ()=>{
         // console.log(inputValues);
           if(validateForm()){
-               if(params.id!=undefined){
+               if(params.id!==undefined){
                    //PS_OC_16
                    let response= await updateCandidateInfo(inputValues,params.id) //PS_OC_25
                    console.log(response)
@@ -172,7 +172,7 @@ export default function Form(){
     let admissionButton=()=>{
         return admissionData.map((values)=>{
             {/* //PS_FPL_51 //PS_OC_1 */}
-                return <> <input type='radio' name="admissionModeId" checked={inputValues.admissionModeId==values.admissionModeId?true:false} className={values.admissionMode} value={values.admissionModeId} onChange={(e)=>{onChangeInput(e);setInputValuesError({...inputValuesError,"admissionModeIdError":""})}}></input>
+                return <> <input type='radio' name="admissionModeId" checked={inputValues.admissionModeId===values.admissionModeId?true:false} className={values.admissionMode} value={values.admissionModeId} onChange={(e)=>{onChangeInput(e);setInputValuesError({...inputValuesError,"admissionModeIdError":""})}}></input>
                 <label className="radio-label">{values.admissionMode}</label> </> 
         })
     }
