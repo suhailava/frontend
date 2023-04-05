@@ -21,9 +21,8 @@ jobs:
     - name: npm install, build and test
       run: |
         npm install
-        npm audit fix
-        npm build --if-present
-        npm test --if-present
+        npm build 
+        npm test 
       
 
     - name: Upload artifact for deployment job
