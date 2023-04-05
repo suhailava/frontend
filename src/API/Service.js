@@ -2,7 +2,7 @@ import Client from "./Client";
 
 export async function getCourses(){ //PS_FPL_4
     const config={
-        "url":"http://localhost:4000/candidates/getCourses",
+        "url":"http://localhost:4000/candidates",
         "header":{
             "content-type":'application.json'
         },
@@ -15,7 +15,7 @@ export async function getCourses(){ //PS_FPL_4
 
 export async function getAdmission(){//PS_FPL_16
     const config={
-        "url":"http://localhost:4000/candidates/getAdmission",
+        "url":"http://localhost:4000/candidates",
         "header":{
             "content-type":'application.json'
         },
@@ -28,7 +28,7 @@ export async function getAdmission(){//PS_FPL_16
 
 export async function getFacility(){ //PS_FPL_28
     const config={
-        "url":"http://localhost:4000/candidates/getFacility",
+        "url":"http://localhost:4000/candidates",
         "header":{
             "content-type":'application.json'
         },
