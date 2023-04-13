@@ -50,8 +50,9 @@ export default function Form(){
 
         if(params.id!==undefined){ //PS_FPL_40
             editDataInfo();
+           
         }
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
     console.log();
 
