@@ -33,7 +33,7 @@ export default function Grid() {
 
     useEffect(() => { //PS_PL_3
         getData();
-    }, [page, sort])
+    }, [])
 
 
     const changePage = ({ selected }) => {
