@@ -33,6 +33,7 @@ export default function Grid() {
 
     useEffect(() => { //PS_PL_3
         getData();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
 
