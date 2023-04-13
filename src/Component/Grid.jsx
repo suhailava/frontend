@@ -1,4 +1,4 @@
-// eslint-disable-file no-use-before-define
+/* eslint-disable */
 import { useState, useEffect } from "react";  //PS_PL_1
 import { getCandidateInfo, deleteCandidateInfo, sorting } from "../API/Service";
 import { Link, useNavigate } from "react-router-dom";//PS_ED_3
